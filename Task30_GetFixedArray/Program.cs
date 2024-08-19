@@ -31,15 +31,29 @@ class Program
         return arr;
     }
 
-    static void PrintArray(int[] arr)
-    {
-        Console.Write("[");
-        for (int i = 0; i < arr.Length -1; i++)
-        { 
-            Console.Write($"{arr[i]}, ");
-        }
-        Console.WriteLine($"{arr[7]}]");
-    }
- 
-}
+    //static void PrintArray(int[] arr)
+    //{
+    //    Console.Write("[");
+    //    for (int i = 0; i < arr.Length -1; i++)
+    //    { 
+    //        Console.Write($"{arr[i]}, ");
+    //    }
+    //    Console.WriteLine($"{arr[7]}]");
+    //}
     
+    
+    static void PrintArray(int[] arr)                  // упрощаем код! Перепишем метод печати массива, с помощью тернарного оператора.
+    {
+        int len = arr.Length;
+        Console.Write("[");
+        for (int i = 0; i < len; i++)
+        {
+            Console.Write(i != len - 1 ? (arr[i] + ", ") : (arr[i] + "]"));
+        }
+
+    }
+
+}
+
+    
+
