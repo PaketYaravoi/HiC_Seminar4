@@ -9,8 +9,7 @@ class Program
     static void Main()
     {
         int[] array = new int[8];
-        int rndNumber = GetRandomNum(0, 5);
-        array = FillArray(array, GetRandomNum(0,5));
+        array = FillArray(array);
         PrintArray(array);
 
         
@@ -22,25 +21,25 @@ class Program
         return rnd;
     }
 
-    static int[] FillArray(int[] arr, int rnd)
+    static int[] FillArray(int[] arr)
     {
+
         for (int i = 0; i < arr.Length; i++)
         {
-            arr[i] = rnd;  
+            arr[i] = GetRandomNum(0,2);  
         }
         return arr;
     }
 
     static void PrintArray(int[] arr)
     {
+        Console.Write("[");
         for (int i = 0; i < arr.Length -1; i++)
         { 
             Console.Write($"{arr[i]}, ");
         }
-        Console.WriteLine($"{arr[7]}");
+        Console.WriteLine($"{arr[7]}]");
     }
-    
-                    
-    
+ 
 }
     
